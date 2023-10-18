@@ -7,7 +7,7 @@ function bookmarkArticle(link) {
     if (bookmarkedArticles.indexOf(link) === -1) {
         bookmarkedArticles.push(link);
         setCookie('bookmarked_articles', JSON.stringify(bookmarkedArticles), 30);
-        alert('Статья сохранена! Вы сможете просмотреть его в разделе "Сохранённое".');
+        alert('Статья сохранена! Вы сможете просмотреть её в разделе "Сохранённое".');
     } else {
         alert('Эта статья уже сохранена!');
     }
