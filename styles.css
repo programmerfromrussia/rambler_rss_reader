@@ -1,0 +1,37 @@
+header {
+    background-color: #ad9999; /* Header background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align the site name */
+    padding: 10px; /* Add padding for spacing */
+}
+
+#header-content {
+    display: flex;
+    justify-content: space-between; /* Distribute elements to the edges */
+    align-items: center; /* Vertically align elements */
+}
+
+.nav {
+    display: flex;
+    align-items: center; /* Vertically align nav links */
+}
+
+.nav a {
+    margin-right: 20px; /* Add right margin between nav links */
+    text-decoration: none;
+    color: #fff; /* Text color for nav links */
+    font-size: 20px; /* Font size for nav links */
+    display: flex; /* Make nav links flexible */
+    align-items: center; /* Vertically align nav link text and icon */
+}
+
+/* Add a hover effect for nav links (optional) */
+.nav a:hover {
+    color: #00f; /* Change color on hover */
+}
+
+/* Center the site name text */
+.site-title {
+    flex: 1; /* Takes up the remaining space and centers the text */
+    font-size: 24px; /* Adjust the font size as needed */
+}
