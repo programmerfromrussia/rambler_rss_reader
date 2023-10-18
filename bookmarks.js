@@ -7,9 +7,9 @@ function bookmarkArticle(link) {
     if (bookmarkedArticles.indexOf(link) === -1) {
         bookmarkedArticles.push(link);
         setCookie('bookmarked_articles', JSON.stringify(bookmarkedArticles), 30);
-        alert('Article bookmarked! You can view your bookmarks in the future.');
+        alert('Статья сохранена! Вы сможете просмотреть его в разделе "Сохранённое".');
     } else {
-        alert('This article is already bookmarked.');
+        alert('Эта статья уже сохранена!');
     }
 }
 
