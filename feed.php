@@ -29,11 +29,12 @@ function bookmark_article($link)
 }
 function fetch_rss(&$feed, $url, $source_name)
 {
+    $feed = [];
     if (!$xml = @simplexml_load_file($url))
         return false;
 
     foreach ($xml->channel->xpath('//item') as $xml_item) {
-        $feed_item = false;
+        $feed_item = [];
         $feed_item['title'] = strip_tags(trim($xml_item->title));
         $feed_item['description'] = strip_tags(trim($xml_item->description));
         $feed_item['link'] = strip_tags(trim($xml_item->link));
@@ -64,15 +65,12 @@ foreach ($categories as $name => $url) {
         fetch_rss($feed, $url, $name);
     }
 }
-if (!$feed)
+if (empty($feed))
     die('Нет данных для отображения. (Невозможно получить XML-данные из предоставленных URL-адресов.)');
 
 usort($feed, function ($a, $b) {
     return $b['date'] - $a['date'];
 });
-
-
-
 
 foreach ($feed as $feed_item) {
     $time = date('d.m.Y G:i:s', $feed_item['date']);
